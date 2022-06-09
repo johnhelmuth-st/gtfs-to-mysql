@@ -63,6 +63,19 @@ CREATE TABLE `fare_rules` (
   KEY `route_id` (route_id)
 );
 
+DROP TABLE IF EXISTS feed_info;
+
+CREATE TABLE `feed_info` (
+                             feed_publisher_name VARCHAR(255),
+                             feed_publisher_url VARCHAR(255),
+                             feed_lang VARCHAR(35),
+                             default_lang VARCHAR(35),
+                             feed_start_date VARCHAR(8),
+                             feed_end_date VARCHAR(8),
+                             feed_version VARCHAR(255),
+                             feed_contact_email VARCHAR(255),
+                             feed_contact_url VARCHAR(255),
+);
 
 DROP TABLE IF EXISTS routes;
 
