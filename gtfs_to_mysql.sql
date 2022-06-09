@@ -42,11 +42,13 @@ DROP TABLE IF EXISTS fare_attributes;
 
 CREATE TABLE `fare_attributes` (
   fare_id VARCHAR(255),
+  agency_id VARCHAR(255),
+  fare_period_id VARCHAR(255),
   price DECIMAL(9,6),
+  descriptions VARCHAR(255),
   currency_type VARCHAR(8),
   payment_method INT(11),
   transfers INT(11),
-  agency_id VARCHAR(255),
   transfer_duration INT(11),
   KEY `fare_id` (fare_id)
 );
@@ -105,8 +107,8 @@ CREATE TABLE `stop_times` (
   stop_headsign VARCHAR(255),
   pickup_type INT(2),
   drop_off_type INT(2),
-  continuous_pickup INT(2),
-  continuous_drop_off INT(2),
+--   continuous_pickup INT(2),
+--   continuous_drop_off INT(2),
   shape_dist_traveled DECIMAL(9,6),
   timepoint TINYINT(1),
 
@@ -121,7 +123,7 @@ CREATE TABLE `stops` (
   stop_id VARCHAR(255) PRIMARY KEY,
   stop_code VARCHAR(255),
   stop_name VARCHAR(255),
-  tts_stop_name VARCHAR(255),
+--   tts_stop_name VARCHAR(255),
   stop_desc VARCHAR(255),
   stop_lat DECIMAL(9,6),
   stop_lon DECIMAL(9,6),
@@ -148,10 +150,10 @@ CREATE TABLE `trips` (
   direction_id TINYINT(1),
   block_id VARCHAR(255),
   shape_id VARCHAR(255),
-  wheelchair_accessible INT(2),
-  bikes_allowed INT(2),
-  -- peak_flag INT(2), -- Used by KCM, not in spec?
-  -- fare_id VARCHAR(255), -- Used by KCM, not in spec?
+--   wheelchair_accessible INT(2),
+--   bikes_allowed INT(2),
+  peak_flag INT(2), -- Used by KCM, not in spec?
+  fare_id VARCHAR(255), -- Used by KCM, not in spec?
   KEY `route_id` (route_id),
   KEY `service_id` (service_id),
   KEY `direction_id` (direction_id),
