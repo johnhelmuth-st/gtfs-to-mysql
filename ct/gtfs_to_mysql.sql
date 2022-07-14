@@ -1,3 +1,4 @@
+USE ct_gtfs;
 
 DROP TABLE IF EXISTS agency;
 

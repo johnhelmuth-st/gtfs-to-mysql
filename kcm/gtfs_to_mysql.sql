@@ -1,3 +1,4 @@
+USE kcm_gtfs;
 
 DROP TABLE IF EXISTS agency;
 
