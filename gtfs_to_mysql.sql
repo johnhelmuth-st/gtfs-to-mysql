@@ -66,15 +66,15 @@ CREATE TABLE `fare_rules` (
 DROP TABLE IF EXISTS feed_info;
 
 CREATE TABLE `feed_info` (
-                             feed_publisher_name VARCHAR(255),
-                             feed_publisher_url VARCHAR(255),
-                             feed_lang VARCHAR(35),
-                             default_lang VARCHAR(35),
-                             feed_start_date VARCHAR(8),
-                             feed_end_date VARCHAR(8),
-                             feed_version VARCHAR(255),
-                             feed_contact_email VARCHAR(255),
-                             feed_contact_url VARCHAR(255),
+  feed_publisher_name VARCHAR(255),
+  feed_publisher_url VARCHAR(255),
+  feed_lang VARCHAR(35),
+  default_lang VARCHAR(35),
+  feed_start_date VARCHAR(8),
+  feed_end_date VARCHAR(8),
+  feed_version VARCHAR(255),
+  feed_contact_email VARCHAR(255),
+  feed_contact_url VARCHAR(255),
 );
 
 DROP TABLE IF EXISTS routes;
@@ -163,8 +163,6 @@ CREATE TABLE `trips` (
   shape_id VARCHAR(255),
   wheelchair_accessible INT(2),
   bikes_allowed INT(2),
-  -- peak_flag INT(2), -- Used by KCM, not in spec?
-  -- fare_id VARCHAR(255), -- Used by KCM, not in spec?
   KEY `route_id` (route_id),
   KEY `service_id` (service_id),
   KEY `direction_id` (direction_id),
