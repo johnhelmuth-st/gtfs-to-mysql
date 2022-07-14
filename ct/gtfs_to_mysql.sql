@@ -87,9 +87,9 @@ DROP TABLE IF EXISTS shapes;
 
 CREATE TABLE `shapes` (
   shape_id VARCHAR(255),
-  shape_pt_sequence INT(11),
   shape_pt_lat DECIMAL(9,6),
   shape_pt_lon DECIMAL(9,6),
+  shape_pt_sequence INT(11),
   shape_dist_traveled DECIMAL(9,6),
   KEY `shape_id` (shape_id)
 );
